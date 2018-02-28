@@ -1,3 +1,4 @@
+{#
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,4 +11,585 @@
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
+</html>
+#}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pets Care an Animals Category Bootstrap Responsive website Template | Home :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Pets Care Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="{{ asset('bundles/template/css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
+    <link href="{{ asset('bundles/template/css/easy-responsive-tabs.css')}}" rel='stylesheet' type='text/css' />
+
+    {#test#}
+    <!-- easy-responsive-tabs -->
+
+    <link href="{{ asset('bundles/template/css/style.css')}}" type="text/css" rel="stylesheet" media="all">
+    <link href="{{ asset('bundles/template/css/font-awesome.css')}}" rel="stylesheet">
+    <!-- font-awesome icons -->
+    <!-- //Custom Theme files -->
+    <!-- js -->
+    <script src="{{ asset('bundles/template/js/jquery-2.2.3.min.js')}}"></script>
+    <!-- //js -->
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Junge" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
+    <!-- //web-fonts -->
+</head>
+
+<body>
+<!-- banner -->
+<div class="agileits-banner">
+    <div class="bnr-agileinfo">
+        <div class="banner-top w3layouts">
+            <div class="container">
+                <ul class="agile_top_section">
+                    <li>
+                        <p> Z'animaux Website !</p>
+                    </li>
+                    <li>
+                        <p><span class="glyphicon glyphicon-earphone"></span> 00 216 21 13 70 90 </p>
+                    </li>
+                    <li>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                       HI  {{ app.user.getUsername()}} |
+                        <a href="{{ path('fos_user_security_logout') }}">
+                            {{ 'logout'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    </li>
+                    <li>
+                        {% else %}
+                        <a class="sign" href="{{ path('fos_user_security_login')}}" data-toggle="modal" data-target="#myModal2"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>
+                        {% endif %}
+                    </li>
+                   {# {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                        <a href="{{ path('fos_user_security_logout') }}">
+                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    {% else %}
+                        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                    {% endif %}#}
+                </ul>
+            </div>
+        </div>
+        <div class="banner-w3text w3layouts">
+            <p class="w3_text">Inspired by Unknown</p>
+            <h3 class="w3ls_agile">Pets Care </h3>
+
+            <h2 class="w3ls_agile">Z'Animaux</h2>
+        </div>
+        <!-- navigation -->
+        <div class="top-nav w3-agiletop">
+
+                <div class="navbar-header w3llogo">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <h1><a href="{{ path('index')}}"> Home</a></h1>
+                </div>
+        <div class="top-nav w3-agiletop">
+            <div class="agile_inner_nav_w3ls">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                {#============================================================================================#}
+                {#============================================================================================#}
+                {#============================================================================================#}
+{#                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="w3menu navbar-left">#}
+{#                        <ul class="nav navbar">
+                            <li><a href="{{ path('index')}}" class="active">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="{{ path('Produit') }}">Product</a></li>
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Pages</span><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="icons.html">Icons</a></li>
+                                    <li><a href="typo.html">Typography</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>#}
+                        {#<ul class="nav navbar">#}
+                            <ul class="nav navbar">
+                                <li><a href="{{ path('Evennement') }}"  >Event</a></li>
+                                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Animals</span><span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ path('_afficher') }}">Adopt</a></li>
+                                        <li><a href="{{ path('_AjouterGardeAnimaux') }}">Guard</a></li>
+                                        <li><a href="{{ path('_AfficherGardeAnimaux') }}">Guard animals</a></li>
+                                    </ul>
+                                    {#============================ Mouadh ==============#}
+                                    {% if is_granted('ROLE_USER') %}
+                                    {% if not is_granted('ROLE_REP') %}
+                                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Association</span><span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ path('ajouter1') }}">Request to add an association</a></li>
+                                        <li><a href="{{ path('search_addresse_ajax') }}">Search an association</a></li>
+
+                                    </ul>
+                                    {% else %}
+
+
+
+
+                                    {% endif %}
+
+                                    {% if is_granted('ROLE_REP')  %}
+
+
+                                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Association</span><span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ path('ajouter_Front') }}">Add Association</a></li>
+                                        <li><a href="{{ path('lister_Front') }}">Dispaly Association</a></li>
+
+
+                                    </ul>
+
+
+
+                                    {% endif %}
+                                    {% endif %}
+                                    {#============================ Mouadh ==============#}
+
+                                    {#<li><a href="{{ path('index') }}">Association</a></li>#}
+                                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Health</span><span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ path('listeVetFront') }}">Veterinary</a></li>
+                                        <li><a href="{{ path('projet_home') }}">Article</a></li>
+                                    </ul>
+                                </li>
+                                {#                        <li><a href="{{ path('Produit') }}">Produit</a></li>#}
+
+                                <li><a href="{{ path('list') }}">Product</a></li>
+
+                                <li><a href="{{ path('index') }}">Reclamation</a></li>
+
+                            </ul>
+                    </div>
+{#                    <div class="w3ls-bnr-icons social-icon navbar-right">
+                        <a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="social-button google"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="social-button dribbble"><i class="fa fa-dribbble"></i></a>
+                    </div>#}
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+
+
+{#
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="w3menu navbar-left">
+                        <ul class="nav navbar">
+                        <li><a href="index" >Home</a></li>
+                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Animaux</span><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ path('index') }}">Adopter</a></li>
+                                <li><a href="{{ path('index') }}">Garde</a></li>
+                            </ul>
+                        <li><a href="{{ path('index') }}">Association</a></li>
+                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Santé</span><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ path('index') }}">Véterinaire</a></li>
+                                <li><a href="{{ path('index') }}">article</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ path('Produit') }}">Produit</a></li>
+                        <li><a href="{{ path('index') }}">Evenement</a></li>
+                        <li><a href="{{ path('index') }}">Reclamation</a></li>
+
+                    </ul>
+                    <div class="w3ls-bnr-icons social-icon navbar-right">
+                        <a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="social-button google"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="social-button dribbble"><i class="fa fa-dribbble"></i></a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+#}
+
+            {#============================================================================================#}
+            {#============================================================================================#}
+            {#============================================================================================#}
+        </div>
+        <!-- //navigation -->
+    </div>
+</div>
+<!-- //banner -->
+{% block content %}{% endblock %}
+
+
+
+
+<!-- w3-agilesale -->
+<div class="w3-agilesale welcome">
+    <div class="container">
+        <h3 class="agileits-title two">Pet Adoption. Be Part of Something <span>Beautiful!</span></h3>
+        <a href="contact.html" class="button button-isi"><span>Contact Us </span><i class="icon glyphicon glyphicon-arrow-right"></i></a>
+    </div>
+</div>
+<!-- //w3-agilesale -->
+<!-- subscribe -->
+<div class="subscribe wthree-sub">
+    <div class="container">
+        <h4>Subscribe Now</h4>
+        <form action="#" method="post">
+            <input type="email" name="email" placeholder="Enter your Email..." required="">
+            <input type="submit" value="SUBSCRIBE">
+            <div class="clearfix"> </div>
+        </form>
+        <div class="w3lsfoter-icons social-icon">
+            <a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.facebook.com/" class="social-button facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="social-button google"><i class="fa fa-google-plus"></i></a>
+            <a href="#" class="social-button dribbble"><i class="fa fa-dribbble"></i></a>
+        </div>
+    </div>
+</div>
+<!-- //subscribe -->
+<!-- copy rights start here -->
+<div class="copy-w3right">
+    <div class="container">
+        <div class="top-nav bottom-w3lnav">
+            <ul class="nav navbar">
+                <ul class="nav navbar">
+                    <li><a href="{{ path('Evennement') }}"  >Event</a></li>
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Animals</span><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('_afficher') }}">Adopt</a></li>
+                            <li><a href="{{ path('_AjouterGardeAnimaux') }}">Guard</a></li>
+                            <li><a href="{{ path('_AfficherGardeAnimaux') }}">Guard animals</a></li>
+                        </ul>
+                        {#============================ Mouadh ==============#}
+                        {% if is_granted('ROLE_USER') %}
+                        {% if not is_granted('ROLE_REP') %}
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Association</span><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('ajouter1') }}">Request to add an association</a></li>
+                            <li><a href="{{ path('search_addresse_ajax') }}">Search an association</a></li>
+
+                        </ul>
+                        {% else %}
+
+
+
+
+                        {% endif %}
+
+                        {% if is_granted('ROLE_REP')  %}
+
+
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Association</span><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('ajouter_Front') }}">Add Association</a></li>
+                            <li><a href="{{ path('lister_Front') }}">Dispaly Association</a></li>
+
+
+                        </ul>
+
+
+
+                        {% endif %}
+                        {% endif %}
+                        {#============================ Mouadh ==============#}
+
+                        {#<li><a href="{{ path('index') }}">Association</a></li>#}
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Health</span><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('listeVetFront') }}">Veterinary</a></li>
+                            <li><a href="{{ path('projet_home') }}">Article</a></li>
+                        </ul>
+                    </li>
+                    {#                        <li><a href="{{ path('Produit') }}">Produit</a></li>#}
+
+                    <li><a href="{{ path('list') }}">Product</a></li>
+
+                    <li><a href="{{ path('index') }}">Reclamation</a></li>
+
+                </ul>
+{#                <li><a href="{{ path('index')}}"  >Home</a></li>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Animaux</span><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('index') }}">Adopter</a></li>
+                        <li><a href="{{ path('index') }}">Garde</a></li>
+                    </ul>
+                <li><a href="{{ path('index') }}">Association</a></li>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">Santé</span><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('listeVetFront') }}">Véterinaire</a></li>
+                        <li><a href="{{ path('projet_home') }}">Article</a></li>
+                    </ul>
+                </li>
+#}{#                <li><a href="{{ path('Produit') }}">Produit</a></li>#}{#
+
+                <li><a href="{{ path('list') }}">Produit</a></li>
+
+                <li><a href="{{ path('index') }}">Reclamation</a></li>#}
+
+            </ul>
+        </div>
+        <p>© 2017 Z'animaux. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+    </div>
+</div>
+<!-- text-effect -->
+<script type="text/javascript" src="{{ asset('bundles/template/js/jquery.transit.js')}}"></script>
+<script type="text/javascript" src="{{ asset('bundles/template/js/jquery.textFx.js')}}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.w3ls_agile').textFx({
+            type: 'fadeIn',
+            iChar: 100,
+            iAnim: 1000
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.w3_text').textFx({
+            type: 'fadeIn',
+            iChar: 100,
+            iAnim: 1000
+        });
+    });
+</script>
+
+<!-- //copy right end here -->
+<!-- password-script -->
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById("password1").onchange = validatePassword;
+        document.getElementById("password2").onchange = validatePassword;
+    }
+
+    function validatePassword() {
+        var pass2 = document.getElementById("password2").value;
+        var pass1 = document.getElementById("password1").value;
+        if (pass1 != pass2)
+            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+        else
+            document.getElementById("password2").setCustomValidity('');
+        //empty string means no validation error
+    }
+</script>
+<!-- //password-script -->
+
+<!-- script for responsive tabs -->
+<script src="{{ asset('bundles/template/js/easy-responsive-tabs.js')}}"></script>
+<script>
+    $(document).ready(function () {
+        $('#horizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            activate: function (event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+        $('#verticalTab').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            fit: true
+        });
+    });
+</script>
+<!-- script for responsive tabs -->
+<script src="{{ asset('bundles/template/js/SmoothScroll.min.js')}}"></script>
+<!-- start-smooth-scrolling -->
+<script type="text/javascript" src="{{ asset('bundles/template/js/move-top.js')}}"></script>
+<script type="text/javascript" src="{{ asset('bundles/template/js/easing.js')}}"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1000);
+        });
+    });
+</script>
+<!-- //end-smooth-scrolling -->
+<!-- smooth-scrolling-of-move-up -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        /*
+        var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+        };
+        */
+
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
+
+    });
+</script>
+<!-- Classie --><!-- for toggle left push menu script -->
+<script src="{{ asset('bundles/templates/js/classie.js')}}"></script>
+<script>
+    var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+        showLeftPush = document.getElementById( 'showLeftPush' ),
+        body = document.body;
+
+    showLeftPush.onclick = function() {
+        classie.toggle( this, 'active' );
+        classie.toggle( body, 'cbp-spmenu-push-toright' );
+        classie.toggle( menuLeft, 'cbp-spmenu-open' );
+        disableOther( 'showLeftPush' );
+    };
+
+    function disableOther( button ) {
+        if( button !== 'showLeftPush' ) {
+            classie.toggle( showLeftPush, 'disabled' );
+        }
+    }
+</script>
+<!-- //Classie --><!-- //for toggle left push menu script -->
+<script>
+    // This example adds a search box to a map, using the Google Place Autocomplete
+    // feature. People can enter geographical searches. The search box will return a
+    // pick list containing a mix of places and predicted search terms.
+    function maPosition(position) {
+
+        //  document.getElementById('lat').value=position.coords.latitude  ;
+        // document.getElementById('lng').value=position.coords.longitude  ;
+
+    }
+    function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 36.8384725, lng: 10.1705344},
+            zoom: 7,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        //  geocoder.geocode( { 'searchBox': searchBox}, function(results, status) {
+        /*  if (status == google.maps.GeocoderStatus.OK) {
+
+              document.getElementById('lat').value = results[0].geometry.location.lat();
+              document.getElementById('lng').value = results[0].geometry.location.lng();}//}*/
+
+
+
+
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+            searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // [START region_getplaces]
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        //yzed marker ..............
+        searchBox.addListener('places_changed', function() {
+            var places = searchBox.getPlaces();
+
+
+
+            if (places.length == 0) {
+                return;
+            }
+
+            // Clear out the old markers.
+            markers.forEach(function(marker) {
+                marker.setMap(null);
+            });
+            markers = [];
+
+
+            // For each place, get the icon, name and location.
+            var bounds = new google.maps.LatLngBounds();
+
+
+            places.forEach(function(place) {
+                var icon = {
+                    url: place.icon,
+                    size: new google.maps.Size(71, 71),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(17, 34),
+                    scaledSize: new google.maps.Size(25, 25)
+                };
+
+                // Create a marker for each place.
+                markers.push(new google.maps.Marker({
+                    map: map,
+                    icon: icon,
+                    title: place.name,
+                    position: place.geometry.location
+
+                }));
+
+
+
+                if (place.geometry.viewport) {
+                    // Only geocodes have viewport.
+                    bounds.union(place.geometry.viewport);
+
+                } else {
+                    bounds.extend(place.geometry.location);
+
+                }
+
+            });
+            map.fitBounds(bounds);
+
+        });
+        // [END region_getplaces]
+        // LAt LNG
+
+    }
+
+
+</script>
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiXZbMbwSwa6Q3_R32LwtpNOczUY4weUQ&libraries=places&callback=initAutocomplete"
+        async defer></script>
+
+<!-- //smooth-scrolling-of-move-up -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ asset('bundles/template/js/bootstrap.js')}}"></script>
+</body>
+
 </html>

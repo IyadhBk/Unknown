@@ -4,6 +4,10 @@ parameters:
     #parameter_name: value
 
 services:
+    authentication.handler.login_success_handler:
+        class:  ProjetBundle\Security\LoginSuccessHandler
+        arguments:  ['@router', '@security.authorization_checker']
+
     # default configuration for services in *this* file
     _defaults:
         # automatically injects dependencies in your services
@@ -33,3 +37,17 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+
+
+
+    app.form.registration:
+            class: ProjetBundle\Form\RegistrationType
+            tags:
+                 - { name: form.type, alias: app_user_registration }
+
+
+parameters:
+    brochures_directory: '%kernel.project_dir%/web/bundles/uploads/brochures'
+
+

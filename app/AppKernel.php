@@ -16,6 +16,18 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
+            new ProjetBundle\ProjetBundle(),
+            new UserBundle\UserBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new Mgilet\NotificationBundle\MgiletNotificationBundle(),
+            new ProduitBundle\ProduitBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new blackknight467\StarRatingBundle\StarRatingBundle(),
+            new Ob\HighchartsBundle\ObHighchartsBundle(),
+            new Nomaya\SocialBundle\NomayaSocialBundle(),
+            new Knp\Bundle\TimeBundle\KnpTimeBundle()
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
